@@ -12,4 +12,4 @@ Therefore, you must ensure that you runs this code with JDK 8.
 
 NIA    | User name | Repo | Build Status | What was explored | Review for :gift: | Score
 -------|-----------|------|--------------|-------------------|----------------------|--------
-717788 | [Carlos Marañes](https://github.com/carlosmn1997) | [Test branch](https://github.com/carlosmn1997/lab2-big-ws/tree/test) |              | [![Build Status](https://travis-ci.org/carlosmn1997/lab2-big-ws)] | Tested new languages(English->Russian, Spanish->English)| 
+717788 | [Carlos Marañes](https://github.com/carlosmn1997) | [Test branch](https://github.com/carlosmn1997/lab2-big-ws/tree/test)  [![Build Status](https://travis-ci.org/carlosmn1997/lab2-big-ws.svg)] | Tested new languages(English->Russian, Spanish->English)|
