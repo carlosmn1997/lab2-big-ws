@@ -21,10 +21,18 @@ import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.EndpointImpl;
 import org.apache.cxf.transport.servlet.CXFServlet;
 import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
+//import org.springframework.boot.autoconfigure;
 
-@EnableWs
+//@EnableAutoConfiguration
 @Configuration
 public class CXFConfig extends WsConfigurerAdapter {
+  // @Bean
+  // public ServletRegistrationBean<HttpServletBean> messageDispatcherServlet(ApplicationContext applicationContext) {
+  //   MessageDispatcherServlet servlet = new MessageDispatcherServlet();
+  //   servlet.setApplicationContext(applicationContext);
+  //   servlet.setTransformWsdlLocations(true);
+  //   return new ServletRegistrationBean<>(servlet, "/ws/*");
+  // }
   // @Bean
   // public ServletRegistrationBean<HttpServletBean> messageDispatcherServlet(ApplicationContext applicationContext) {
   //   MessageDispatcherServlet servlet = new MessageDispatcherServlet();
