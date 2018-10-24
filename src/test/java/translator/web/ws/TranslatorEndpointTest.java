@@ -12,8 +12,8 @@ import org.springframework.util.ClassUtils;
 import org.springframework.ws.client.core.WebServiceTemplate;
 
 import translator.Application;
-import translator.web.ws.schema.GetTranslationRequest;
-import translator.web.ws.schema.GetTranslationResponse;
+import translator.web.ws.schema.GTRequest;
+import translator.web.ws.schema.GTResponse;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
@@ -32,21 +32,21 @@ public class TranslatorEndpointTest {
 
   @Before
   public void init() throws Exception {
-    marshaller.setPackagesToScan(ClassUtils.getPackageName(GetTranslationRequest.class));
+    marshaller.setPackagesToScan(ClassUtils.getPackageName(GTRequest.class));
     marshaller.afterPropertiesSet();
   }
 
   @Test
   public void testSendAndReceive() {
-    GetTranslationRequest request = new GetTranslationRequest();
+    GTRequest request = new GTRequest();
     request.setLangFrom("en");
     request.setLangTo("es");
     request.setText("This is a test of translation service");
     Object response = new WebServiceTemplate(marshaller).marshalSendAndReceive("http://localhost:"
             + port + "/ws", request);
     assertNotNull(response);
-    assertThat(response, instanceOf(GetTranslationResponse.class));
-    GetTranslationResponse translation = (GetTranslationResponse) response;
+    assertThat(response, instanceOf(GTResponse.class));
+    GTResponse translation = (GTResponse) response;
     assertThat(translation.getTranslation(), is("Esto es una prueba de servicio de traducción"));
   }
 }
